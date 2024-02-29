@@ -1,0 +1,94 @@
+<p-panel>
+  <ng-template pTemplate="header">
+    <div><span class="pi pi-fw pi-sort-alpha-down"></span>&nbsp;Empleados - Listado</div>
+  </ng-template>
+
+  <ng-template pTemplate="icons">
+    <div>
+      <button type="button" pButton (click)="create()" title="Create employee" class="p-button-outlined p-button-info">
+        <em class="pi pi-plus-circle"></em>
+      </button>
+      <button type="button" pButton title="Print list of expressions" class="p-button-outlined p-button-success">
+        <em class="pi pi-print"></em>
+      </button>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="body">
+    <div class="grid bg-gray-900">
+      <div class="col-12">
+        <p-table #dt
+                 [value]="empleados"
+                 dataKey="id"
+                 [paginator]="true"
+                 [rows]="50"
+                 [showCurrentPageReport]="true"
+                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} employees"
+                 [rowsPerPageOptions]="[10, 25, 50, 100]"
+                 [filterDelay]="100"
+                 [globalFilterFields]="['id', 'nombre', 'apellido', 'jefeDirecto']"
+                 styleClass="p-datatable-gridlines p-datatable-striped">
+
+          <ng-template pTemplate="caption">
+            <div class="table-header">
+              <div class="grid">
+                <div class="col-12 md:col-4"><span class="pi pi-sort-alpha-down"></span>&nbsp;Employees</div>
+                <div class="col-12 md:col-8 text-right">
+                  <span class="p-input-icon-right ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText
+                           [formControl]="search"
+                           (input)="dt.filterGlobal(search.value, 'contains')"
+                           placeholder="Global search" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+
+          <ng-template pTemplate="header">
+            <tr>
+              <th id="id" pSortableColumn="id" class="width-15"><p-sortIcon field="id"></p-sortIcon>&nbsp;Id</th>
+              <th id="nombre" pSortableColumn="nombre" class="width-65"><p-sortIcon field="nombre"></p-sortIcon>&nbsp;Empleado</th>
+              <th id="action" class="width-20 text-center">Actions</th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-item>
+            <tr style="font-size: small; vertical-align: top;">
+              <td>
+                <p class="color-whitesmoke">id: {{item.id}}</p>
+              </td>
+              <td>
+                <p class="color-whitesmoke">
+                  <span title="Nombre" class="expression">{{item.nombre}} {{item.apellido}}</span>
+                  <span title="Correo" class="expression-phonetics">{{item.correoElectronico}}</span>
+                  <span title="Nacimiento" class="expression-level">{{item.fechaNacimiento|date}}</span>
+                  <span title="Contratacion" class="expression-gender">{{item.fechaContratacion|date}}</span>
+                  <span title="Estado" [class]="['expression-verb', 'pi', item.estado ? 'pi-bolt' : 'pi-tag']"></span>
+                </p>
+              </td>
+              <td class="text-center">
+                <button type="button" pButton title="Read employee" (click)="read(item.id)" class="p-button-outlined p-button-warning"><em class="pi pi-eye"></em></button>
+                <button type="button" pButton title="Update employee" (click)="update(item.id)" class="p-button-outlined p-button-success"><em class="pi pi-pencil"></em></button>
+                <button type="button" pButton title="Delete employee" (click)="delete(item.id)" class="p-button-outlined p-button-danger"><em class="pi pi-trash"></em></button>
+              </td>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="emptymessage">
+            <tr>
+              <td colspan="5">Expressions not found!</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </ng-template>
+</p-panel>
+
+<app-message-modal
+  [visible]="appService.process.processingMode"
+  [message]="appService.process.message">
+</app-message-modal>
+

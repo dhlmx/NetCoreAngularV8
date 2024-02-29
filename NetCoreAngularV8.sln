@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreAngularV8.Server", "NetCoreAngularV8.Server\NetCoreAngularV8.Server.csproj", "{BC857842-2086-4E05-A394-0D64EB093BF5}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "netcoreangularv8.client", "netcoreangularv8.client\netcoreangularv8.client.esproj", "{48F4B2B3-6A6A-40FE-AAE1-5B6D3E1C2370}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC857842-2086-4E05-A394-0D64EB093BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC857842-2086-4E05-A394-0D64EB093BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC857842-2086-4E05-A394-0D64EB093BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC857842-2086-4E05-A394-0D64EB093BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F4B2B3-6A6A-40FE-AAE1-5B6D3E1C2370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F4B2B3-6A6A-40FE-AAE1-5B6D3E1C2370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F4B2B3-6A6A-40FE-AAE1-5B6D3E1C2370}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{48F4B2B3-6A6A-40FE-AAE1-5B6D3E1C2370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F4B2B3-6A6A-40FE-AAE1-5B6D3E1C2370}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F4B2B3-6A6A-40FE-AAE1-5B6D3E1C2370}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36EA13EE-557E-4922-80B5-86E3740D0082}
+	EndGlobalSection
+EndGlobal

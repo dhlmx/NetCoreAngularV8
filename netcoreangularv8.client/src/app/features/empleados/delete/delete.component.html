@@ -1,0 +1,110 @@
+<p-panel>
+  <ng-template pTemplate="header">
+    <div>
+      <span class="pi pi-fw pi-sort-alpha-down"></span>&nbsp;Empleados - Eliminar
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="icons">
+    <div>
+      <button type="button" pButton title="List employees" (click)="list()" class="p-button-outlined p-button-success"><em class="pi pi-list"></em></button>
+      <button type="button" pButton title="Create employee" (click)="create()" class="p-button-outlined p-button-info"><em class="pi pi-plus-circle"></em></button>
+      <button type="button" pButton title="Read employee" (click)="read(controls.id.value ?? 0)" class="p-button-outlined p-button-danger"><em class="pi pi-eye"></em></button>
+      <button type="button" pButton title="Update employee" (click)="update(controls.id.value ?? 0)" class="p-button-outlined p-button-warning"><em class="pi pi-pencil"></em></button>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="body">
+    <form form="form">
+      <div class="grid">
+        <div class="col-12 text-left">
+          <label for="fotografia">&nbsp;Fotografía</label>
+          <input type="text" inputId="fotografia" title="Fotografia" [formControl]="controls.fotografia" pInputText class="w-full" />
+        </div>
+
+        <div class="col-12 md:col-6 text-left">
+          <label for="nombre">&nbsp;Nombre</label>
+          <input type="text" inputId="nombre" title="Nombre" [formControl]="controls.nombre" pInputText class="w-full" />
+        </div>
+
+        <div class="col-12 md:col-6 text-left">
+          <label for="apellido">&nbsp;Apellido</label>
+          <input type="text" inputId="apellido" title="Apellido" [formControl]="controls.apellido" pInputText class="w-full" />
+        </div>
+
+        <div class="col-12 md:col-4 text-left">
+          <label for="puesto">&nbsp;Puesto</label>
+          <p-dropdown inputId="puesto" title="Gerente/Empleado"
+                      [options]="puestos" [formControl]="controls.puesto"
+                      optionLabel="label" optionValue="value" optionDisabled="inactive"
+                      styleClass="w-full">
+          </p-dropdown>
+        </div>
+
+        <div class="col-12 md:col-4 text-left">
+          <label for="fechaNacimiento">&nbsp;<span class="pi pi-calendar"></span>&nbsp;Nacimiento</label><br />
+          <p-calendar inputId="fechaNacimiento" [formControl]="controls.fechaNacimiento"
+                      dateFormat="dd-mm-yy" [showTime]="false" [showSeconds]="true"
+                      (onselect)="onSelect($event)"
+                      class="w-full">
+          </p-calendar>
+        </div>
+
+        <div class="col-12 md:col-4 text-left">
+          <label for="fechaContratacion">&nbsp;<span class="pi pi-calendar"></span>&nbsp;Contratación</label><br />
+          <p-calendar inputId="fechaContratacion" [formControl]="controls.fechaContratacion"
+                      dateFormat="dd-mm-yy" [showTime]="false" [showSeconds]="true"
+                      (onselect)="onSelect($event)"
+                      class="w-full">
+          </p-calendar>
+        </div>
+
+        <div class="col-12 md:col-12 text-left">
+          <label for="direccion">&nbsp;Dirección</label>
+          <input type="text" inputId="direccion" title="Dirección" [formControl]="controls.direccion" pInputText class="w-full" />
+        </div>
+
+        <div class="col-12 md:col-4 text-left">
+          <label for="telefono">&nbsp;Teléfono</label>
+          <input type="text" inputId="telefono" title="Teléfono" [formControl]="controls.telefono" pInputText class="w-full" />
+        </div>
+
+        <div class="col-12 md:col-4 text-left">
+          <label for="correoElectronico">&nbsp;Correo electrónico</label>
+          <input type="text" inputId="correoElectronico" title="Correo electrónico" [formControl]="controls.correoElectronico" pInputText class="w-full" />
+        </div>
+
+        <div class="col-12 md:col-4 text-left">
+          <label for="estado">&nbsp;Activo</label>
+          <p-dropdown inputId="estado" title="Activo/Inactivo"
+                      [options]="estados" [formControl]="controls.estado"
+                      optionLabel="label" optionValue="value" optionDisabled="inactive"
+                      styleClass="w-full">
+          </p-dropdown>
+        </div>
+
+        <div class="col-12 md:col-12 text-left">
+          <label for="jefeDirecto">&nbsp;Jefe directo</label>
+          <input type="text" inputId="jefeDirecto" title="Jefe directo" [formControl]="controls.jefeDirecto" pInputText class="w-full" />
+        </div>
+      </div>
+    </form>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <div class="grid">
+      <div class="col-12 text-right">
+        <button type="button" label="Delete" pButton title="Delete" [disabled]="form.invalid" (click)="onClickSave()" class="p-button-outlined p-button-info"></button>
+      </div>
+    </div>
+  </ng-template>
+</p-panel>
+
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+<p-toast></p-toast>
+
+<app-message-modal [visible]="appService.process.processingMode"
+                   [message]="appService.process.message">
+</app-message-modal>
+
+

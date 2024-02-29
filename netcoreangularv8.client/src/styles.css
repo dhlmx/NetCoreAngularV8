@@ -1,0 +1,178 @@
+body {
+  box-sizing: border-box;
+/*background-image: url('./assets/images/wallpaper/hipotesis-background.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+}
+
+.align-vertical-top {
+  vertical-align: top;
+}
+
+.color-dark-cyan {
+  color: darkcyan;
+}
+
+.color-dark-khaki {
+  color: darkkhaki;
+}
+
+.color-green {
+  color: green;
+}
+
+.color-grey {
+  color: grey;
+}
+
+.color-maroon {
+  color: maroon;
+}
+
+.color-orange {
+  color: orange;
+}
+
+.color-whitesmoke {
+  color: whitesmoke;
+}
+
+.expression {
+  display: inline-block;
+  width: 40%;
+  color: darkorange;
+  font-size: small;
+  text-align: left;
+}
+
+.expression-gender {
+  display: inline-block;
+  width: 10%;
+  color: darkgray;
+  font-size: small;
+  text-align: right;
+}
+
+.expression-level {
+  display: inline-block;
+  width: 10%;
+  color: darkkhaki;
+  font-size: small;
+  text-align: right;
+}
+
+.expression-meaning {
+  display: inline-block;
+  width: 100%;
+  color: darkgrey;
+  font-size: small;
+  text-align: justify;
+}
+
+.expression-phonetics {
+  display: inline-block;
+  width: 20%;
+  color: darkcyan;
+  font-size: small;
+  text-align: right;
+}
+
+.expression-verb {
+  display: inline-block;
+  width: 10%;
+  color: whitesmoke;
+  font-size: small;
+  text-align: center;
+}
+
+.expression-review {
+  display: inline-block;
+  width: 10%;
+  color: darkorange;
+  font-size: small;
+  text-align: center;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-small {
+  font-size: small;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.verb-conjugation {
+  margin: 0;
+  padding: 4px;
+  color: whitesmoke;
+  font-size: small;
+  font-style: italic;
+}
+
+.verb-head-conjugation {
+  width: 70%;
+  margin: 0;
+  padding: 4px;
+  color: whitesmoke;
+  font-size: medium;
+}
+
+.verb-head-pronoun {
+  width: 30%;
+  margin: 0;
+  padding: 4px;
+  color: whitesmoke;
+  font-size: medium;
+}
+
+.verb-pronoun {
+  margin: 0;
+  padding: 4px;
+  color: whitesmoke;
+  font-size: small;
+  text-align: right;
+}
+
+.verb-time {
+  margin: 0;
+  padding: 4px;
+  color: whitesmoke;
+  font-size: large;
+}
+
+.width-10 {
+  width: 10%;
+}
+
+.width-15 {
+  width: 15%;
+}
+
+.width-20 {
+  width: 20%;
+}
+
+.width-25 {
+  width: 25%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-55 {
+  width: 50%;
+}
+
+.width-65 {
+  width: 65%;
+}
+
+.width-100 {
+  width: 100%;
+}
